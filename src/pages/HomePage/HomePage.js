@@ -2,6 +2,7 @@ import './HomePage.scss';
 import Logo from '../../assets/logo.svg';
 
 const HomePage = () => {
+	
 	return (
 		<section className='homepage'>
 			<h1 className='homepage__header'>The Hive</h1>
