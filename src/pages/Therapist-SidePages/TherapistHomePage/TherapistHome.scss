@@ -1,0 +1,17 @@
+@import "../../../styles/partials/globals";
+@import "../../../styles/partials/mixins";
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/typography.scss";
+
+
+.therapisthome{
+  background-color: $yellow;
+}
+
+.therapisthome__header{
+  margin: 1rem;
+}
+
+.therapisthome__post{
+  margin: 1rem;
+}

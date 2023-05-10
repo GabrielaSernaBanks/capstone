@@ -1,8 +1,16 @@
+@import "../../styles/partials/globals";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography.scss";
+
 .nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid black;
+  height: 3rem; 
 
-
+  &__button{
+    color: $yellow;
+  }
 }

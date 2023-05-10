@@ -1,8 +1,15 @@
+@import "../../styles/partials/globals";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography.scss";
+
+
 .footer{
   display: flex;
   align-items: center;
   justify-content: space-around;
   border: 1px solid black;
+  height: 3rem;
 
   &__homeicon{
     height: 5rem;

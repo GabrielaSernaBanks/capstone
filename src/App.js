@@ -15,7 +15,7 @@ import AssignedCaseDetails from './pages/School-SidePages/AssignedCaseDetailsPag
 import CompleteCaseDetails from './pages/School-SidePages/CompleteCaseDetailsPage/CompleteCaseDetailsPage';
 import AddCasePage from './pages/School-SidePages/AddCasePage/AddCasePage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import RegisPage from './pages/RegisPage/Regis';
+import RegisPage from './pages/RegisPage/RegisPage';
 
 
 function App() {
@@ -26,7 +26,6 @@ function App() {
 					<Route path='/' element={<HomePage />} />
 					<Route path='/login' element={<LoginPage />} />
 					<Route path='/register' element={<RegisPage />} />
-
 					<Route path='/therapisthome' element={<TherapistHomePage />} />
 					<Route path='/jobdetails' element={<JobPostDetails />} />
 					<Route path='/myjobs' element={<MyJobs />} />
