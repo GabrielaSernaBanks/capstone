@@ -1,6 +1,6 @@
-import Footer from "../../components/Footer/Footer";
-import JobPost from "../../components/JobPost/JobPost";
-import Nav from "../../components/Nav/Nav";
+import Footer from "../../../components/Footer/Footer";
+import JobPost from "../../../components/TherapistJobPost/TherapistJobPost";
+import Nav from "../../../components/Nav/Nav";
 
 
 
