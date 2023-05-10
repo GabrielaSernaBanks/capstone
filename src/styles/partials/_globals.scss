@@ -1,0 +1,11 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './typography.scss' as *;
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
