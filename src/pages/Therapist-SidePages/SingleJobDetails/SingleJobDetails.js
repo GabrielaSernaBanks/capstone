@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import './TherapistJobPostDetails.scss'
+import { useParams } from "react-router-dom";
 
 
-const TherapistJobPostDetailsModal = (props) => {
+const SingleJobDetails = (props) => {
+
+  const { case_id } = useParams();
+  console.log(case_id);
 
   return (
     <div>
-      <h2>PINECREST ELEMENTARY SCHOOL</h2>
+      {/* <h2>{school_name}</h2> */}
       <section>
         <p>Address:</p>
         <p>10250 SW 57th Avenue, Pinecrest, FL 33156</p>
@@ -35,4 +38,4 @@ const TherapistJobPostDetailsModal = (props) => {
   );
 }
 
-export default TherapistJobPostDetailsModal;
+export default SingleJobDetails;

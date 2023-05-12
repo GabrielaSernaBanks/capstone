@@ -2,7 +2,6 @@ import './App.css';
 import HomePage from './pages/HomePage/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TherapistHomePage from './pages/Therapist-SidePages/TherapistHomePage/TherapistHome';
-import JobPostDetails from './components/TherapistJobPostDetails/TherapistJobPostDetails';
 import MyJobs from './pages/Therapist-SidePages/MyJobsPage/MyJobsPage';
 import MyJobDetails from './pages/Therapist-SidePages/MyJobDetailsPage/MyJobDetails';
 import EditTherapistPage from './pages/Therapist-SidePages/EditTherapistPage/EditTherapistPage';
@@ -16,6 +15,7 @@ import CompleteCaseDetails from './pages/School-SidePages/CompleteCaseDetailsPag
 import AddCasePage from './pages/School-SidePages/AddCasePage/AddCasePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisPage from './pages/RegisPage/RegisPage';
+import SingleJobDetails from './pages/Therapist-SidePages/SingleJobDetails/SingleJobDetails';
 
 
 function App() {
@@ -27,12 +27,12 @@ function App() {
 					<Route path='/login' element={<LoginPage />} />
 					<Route path='/register' element={<RegisPage />} />
 					<Route path='/therapisthome' element={<TherapistHomePage />} />
-					<Route path='/jobdetails' element={<JobPostDetails />} />
-					<Route path='/myjobs' element={<MyJobs />} />
-					<Route path='/myjobdetails' element={<MyJobDetails />} />
-					<Route path='/edittherapist' element={<EditTherapistPage />} />
+					<Route path='/jobdetails/:case_id' element={<SingleJobDetails />} />
+					<Route path='/myjobs/:therapist_id' element={<MyJobs />} />
+					<Route path='/myjobdetails/:therapist_id/:case_id' element={<MyJobDetails />} />
+					<Route path='/edittherapist/:therapist_id' element={<EditTherapistPage />} />
 					<Route path='/schoolhome' element={<SchoolHomePage />} />
-					<Route path='/assignedcases' element={<AssignedCasesPage />} />
+					<Route path='/assignedcase s' element={<AssignedCasesPage />} />
 					<Route path='/completedcases' element={<CompletedCasesPage />} />
 					<Route path='/editschool' element={<EditSchoolPage />} />
 					<Route path='/activecasedetail' element={<ActiveCaseDetails />} />
