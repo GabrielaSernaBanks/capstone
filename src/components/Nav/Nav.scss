@@ -7,11 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid $dark-gray;
+  border-bottom: 1px solid $gray;
   height: 3rem; 
 
   &__header{
     padding-left: 1rem; 
+    color: $dark-gray;
   }
 
   &__button{
