@@ -1,39 +1,40 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-
-const SingleJobDetails = (props) => {
+function SingleJobDetails() {
 
   const { case_id } = useParams();
-  console.log(case_id);
+  const [caseInfo, setCaseInfo] = useState([]);
+  const data = require('../../../data/cases.json')
+  const item = data.find((item) => item.case_id === case_id);
 
   return (
     <div>
-      {/* <h2>{school_name}</h2> */}
+      <h2>{item.school_name}</h2>
       <section>
         <p>Address:</p>
-        <p>10250 SW 57th Avenue, Pinecrest, FL 33156</p>
+        <p>{item.school_address}</p>
       </section>
       <section>
         <div>
           <p>Date Posted</p>
-          <p>May 23, 2023</p>
+          <p>{item.date_posted}</p>
         </div>
         <div>
           <p>Type:</p>
-          <p>Evaluation</p>
+          <p>{item.type}</p>
         </div>
       </section>
       <section>
         <p>Student Information</p>
-        <p>ID: 0123456</p>
-        <p>DOB: 03-31-2016</p>
-        <p>Grade level: 2</p>
+        <p>ID: {item.student_id}</p>
+        <p>DOB: {item.student_dob}</p>
+        <p>Grade level: {item.student_grade}</p>
       </section>
       <div>
-				<button >ACCEPT JOB</button>
-				<button>GO BACK</button>
-			</div>
+        <button >ACCEPT JOB</button>
+        <button>GO BACK</button>
+      </div>
     </div>
   );
 }
