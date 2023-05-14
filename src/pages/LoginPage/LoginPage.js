@@ -1,16 +1,70 @@
-
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 
 const LoginPage = () => {
-	
+
+	let navigate = useNavigate();
+
+	const [email, setEmail] = useState("")
+	const [password, setPassword] = useState("")
+
+	const handleEmail = (e) => {
+		setEmail(e.target.value);
+	};
+
+	const handlePassword = (e) => {
+		setPassword(e.target.value);
+	};
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+
+		const userData = {
+			email: email,
+			password: password,
+
+		};
+		axios.post("http://localhost:8080/api/therapists/login", userData)
+			.then((response) => {
+				console.log(response.data)
+				sessionStorage.token = response.data.token
+				// navigate('/')
+
+			})
+			.catch(error => {
+				console.error(error);
+			});
+
+	};
+
+
 	return (
 		<section className='loginpage'>
-			<h1 className='login__header'>The Hive</h1>
-			<div className='login__buttons'>
-				<button className='login__buttons-submit'>Submit</button>
-				<button className='login__buttons-forgotpassword'>Forgot Password</button>
-			</div>
+			<form
+			onSubmit={submitHandler}
+			>
+				<input
+					value={email}
+					placeholder="Email"
+					type="email"
+					onChange={handleEmail}
+				/>
+				<input
+					placeholder="Password"
+					type="password"
+					value={password}
+					onChange={handlePassword}
+				/>
+
+				<div className="regis__buttons">
+					<button type="sumbit" className="regis__buttons-submit">
+						Submit
+					</button>
+				</div>
+			</form>
 
 		</section>
 	);
