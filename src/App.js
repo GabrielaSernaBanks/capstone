@@ -23,7 +23,7 @@ function App() {
 		<div >
 			<BrowserRouter>
 				<Routes>
-					<Route path='/' element={<HomePage />} />
+					<Route exact path='/home' element={<HomePage />} />
 					<Route path='/login' element={<LoginPage />} />
 					<Route path='/register' element={<RegisPage />} />
 					<Route path='/therapisthome' element={<TherapistHomePage />} />

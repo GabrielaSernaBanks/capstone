@@ -10,6 +10,7 @@ const LoginPage = () => {
 
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
+	const [stateToken, setToken] = useState("")
 
 	const handleEmail = (e) => {
 		setEmail(e.target.value);
@@ -31,14 +32,15 @@ const LoginPage = () => {
 			.then((response) => {
 				console.log(response.data)
 				sessionStorage.token = response.data.token
-				// navigate('/')
-
+				setToken(response.data.token)
 			})
 			.catch(error => {
 				console.error(error);
 			});
-
+			navigate('/therapisthome')
 	};
+
+	console.log(stateToken)
 
 
 	return (

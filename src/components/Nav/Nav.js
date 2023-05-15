@@ -1,17 +1,28 @@
 import './Nav.scss';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import { useNavigate } from "react-router-dom";
 
 
 
 function Nav() {
+
+	const navigate = useNavigate();
+
+
+	const logOut = (e) => {
+		e.preventDefault();
+		sessionStorage.removeItem('token');
+		navigate('/home')
+
+	}
+
+
 	return (
-		<Box sx={{ '& button': { m: 1 } }}>
 			<div className='nav' >
 				<h1 className='nav__header'>The Hive</h1>
-				<Button size="medium" variant="contained" className='nav__button'>LOGOUT</Button>
+				<button 
+				onClick={logOut}
+				size="medium" variant="contained" className='nav__button'>LOGOUT</button>
 			</div>
-		</Box>
 	);
 }
 

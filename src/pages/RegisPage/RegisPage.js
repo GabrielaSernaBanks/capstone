@@ -13,7 +13,7 @@ function RegisPage() {
 	const [last_name, setLastName] = useState("")
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
-	const [license_number, setLicense] = useState(1)
+	const [license_number, setLicense] = useState("")
 
 	const handleFirstName = (e) => {
 		setFirstName(e.target.value);
@@ -57,34 +57,6 @@ function RegisPage() {
 				console.error(error);
 			});
 		};
-
-		// axios
-		// 	.post("http://localhost:8080/api/therapists/", {
-		// 		method: "POST",
-		// 		body: JSON.stringify({
-		// 			first_name: first_name,
-		// 			last_name: last_name,
-		// 			license_number: license_number,
-		// 			email: email,
-		// 			password: password,
-		// 		}),
-		// 		headers: { "Content-Type": "application/json" },
-		// 	}
-		// 		.then((response) => {
-		// 			setEmail(''),
-		// 				setFirstName(''),
-		// 				setLastName(''),
-		// 				setPassword(''),
-		// 				setLicense(1)
-		// 			console.log(response);
-		// 		})
-		// 		.catch((error) => {
-		// 			console.log(error);
-		// 		});
-
-
-
-		// navigate('/login')
 
 
 	return (
