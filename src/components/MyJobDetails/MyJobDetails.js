@@ -1,7 +1,10 @@
 import './MyJobDetails.scss';
 import cases from '../../data/cases.json';
 
-function MyJobDetails() {
+function MyJobDetails( {therapistDetails}) {
+
+	console.log(therapistDetails.id)
+
 	return (
 		<>	
 			

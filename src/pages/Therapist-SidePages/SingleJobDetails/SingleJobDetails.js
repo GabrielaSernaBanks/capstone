@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import './SingleJobDetails.scss';
 import Nav from "../../../components/Nav/Nav";
 import Footer from "../../../components/Footer/Footer";
+import { Navigate } from "react-router-dom";
+
 
 function SingleJobDetails() {
 
@@ -11,7 +13,9 @@ function SingleJobDetails() {
 	const data = require('../../../data/cases.json');
 	const item = data.find((item) => item.case_id === case_id);
 
-	return (
+
+
+	return sessionStorage.token ? (
 		<>
 			<Nav />
 
@@ -53,6 +57,9 @@ function SingleJobDetails() {
 			</div>
 			<Footer />
 		</>
+	) : (
+		<Navigate to="/home"/>
+
 	);
 }
 

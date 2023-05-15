@@ -2,14 +2,32 @@ import './TherapistJobPost.scss';
 import cases from '../../data/cases.json';
 // import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 
 function TherapistJobPost() {
-	// const [schoolIndex, setSchoolIndex] = useState([]);
+
+
+	const [jobs, setJobs] = useState([]);
+
+	useEffect(() =>{
+		axios.get('http://localhost:8080/api/cases')
+			.then(response =>{
+				setJobs(response.data);
+				console.log(response.data)
+
+			})
+			.catch(error => {
+				console.error(error);
+		});
+	}, []);
+
 
 	return (
 
 		<div>
-			{cases.map((jobpost) => (
+			{jobs.map((jobpost) => (
 				<section className='jobpost'>
 					<p className='jobpost__header'>{jobpost.school_name}</p>
 					<div className='jobpost__info'>

@@ -2,20 +2,14 @@ import Footer from "../../../components/Footer/Footer";
 import TherapistJobPost from "../../../components/TherapistJobPost/TherapistJobPost";
 import Nav from "../../../components/Nav/Nav";
 import './TherapistHome.scss'
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 function TherapistHome() {
 
-const navigate = useNavigate();
 
-	const token = window.sessionStorage.getItem('token');
-	console.log("this is the token", token)
 
-if (!token) {
-	return navigate("/home")
-}
-return (
+return sessionStorage.token ? (
 	<div>
 	<Nav />
 	<div className="therapisthome">
@@ -29,6 +23,8 @@ return (
 	<Footer />
 </div>
 
+) : (
+	<Navigate to="/home"/>
 )
 
 }

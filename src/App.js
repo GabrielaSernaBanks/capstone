@@ -32,7 +32,7 @@ function App() {
 					<Route path='/myjobdetails/:therapist_id/:case_id' element={<MyJobDetails />} />
 					<Route path='/edittherapist/:therapist_id' element={<EditTherapistPage />} />
 					<Route path='/schoolhome' element={<SchoolHomePage />} />
-					<Route path='/assignedcase s' element={<AssignedCasesPage />} />
+					<Route path='/assignedcases' element={<AssignedCasesPage />} />
 					<Route path='/completedcases' element={<CompletedCasesPage />} />
 					<Route path='/editschool' element={<EditSchoolPage />} />
 					<Route path='/activecasedetail' element={<ActiveCaseDetails />} />

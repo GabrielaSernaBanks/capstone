@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
 
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
@@ -33,12 +33,13 @@ const LoginPage = () => {
 				console.log(response.data)
 				sessionStorage.token = response.data.token
 				setToken(response.data.token)
+				navigate('/therapisthome')
 			})
 			.catch(error => {
 				console.error(error);
 			});
-			navigate('/therapisthome')
-	};
+
+		};
 
 	console.log(stateToken)
 
