@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-
+import './LoginPage.scss';
+import LoginImage from '../../assets/login.svg';
 
 const LoginPage = () => {
 
@@ -39,36 +39,45 @@ const LoginPage = () => {
 				console.error(error);
 			});
 
-		};
+	};
 
 	console.log(stateToken)
 
 
 	return (
-		<section className='loginpage'>
-			<form
-			onSubmit={submitHandler}
-			>
-				<input
-					value={email}
-					placeholder="Email"
-					type="email"
-					onChange={handleEmail}
-				/>
-				<input
-					placeholder="Password"
-					type="password"
-					value={password}
-					onChange={handlePassword}
-				/>
+		<section>
+			<header>
+				<img className="loginIcon" src={LoginImage} />
 
-				<div className="regis__buttons">
-					<button type="sumbit" className="regis__buttons-submit">
-						Submit
-					</button>
-				</div>
-			</form>
+				<h1 className="login-header">LOGIN</h1>
+			</header>
+			<section className='loginpage'>
+				<form
+					onSubmit={submitHandler}
+				>
+					<input
+						className="loginpage__email"
+						value={email}
+						placeholder="Email"
+						type="email"
+						onChange={handleEmail}
+					/>
+					<input
+						className="loginpage__password"
+						placeholder="Password"
+						type="password"
+						value={password}
+						onChange={handlePassword}
+					/>
 
+					<div className="login__buttons">
+						<button type="submit" className="login__buttons-submit">
+							Submit
+						</button>
+					</div>
+				</form>
+
+			</section>
 		</section>
 	);
 };

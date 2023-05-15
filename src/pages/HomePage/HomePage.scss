@@ -1,8 +1,19 @@
+@import "../../styles/partials/globals";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/typography.scss";
+
 .homepage{
+  margin: 0 auto;
+  width: 100%;
   background-color: rgb(250, 239, 165);
 
   &__header{
-    padding-top: 10rem;
+    padding-top: 8rem;
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    color: $dark-gray;
   }
 
   &__logo{
@@ -12,6 +23,29 @@
   &__buttons{
     display: flex;
     flex-direction: column;
-    margin: 2rem;
-  }
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    }
+
+    &__buttons-login{
+      width: 90%;
+      height: 2rem;
+      border-radius: 15px;
+      border: 2px solid $yellow;
+      color: $dark-gray;
+      background-color: white;
+    }
+
+    &__buttons-signup{
+      width: 90%;
+      margin-top: 0.75rem;
+      height: 2rem;
+      border-radius: 15px;
+      border: none;
+      border: 2px solid $yellow;
+      color: $dark-gray;
+      background-color: white;
+
+    }
 }
+

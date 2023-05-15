@@ -11,12 +11,10 @@ const HomePage = () => {
 			<div className='homepage__buttons'>
 				<Link to="/login">
 					<button className='homepage__buttons-login'>Login</button>
-
 				</Link>
 
 				<Link to="/register">
 					<button className='homepage__buttons-signup'>Sign Up</button>
-
 				</Link>
 			</div>
 
