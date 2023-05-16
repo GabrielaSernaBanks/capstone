@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './LoginPage.scss';
-import LoginImage from '../../assets/login.svg';
+import LoginImage from '../../assets/login2.svg';
+import { Link } from 'react-router-dom';
+
 
 const LoginPage = () => {
 
@@ -11,6 +13,7 @@ const LoginPage = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const [stateToken, setToken] = useState("")
+	const [formSumbission, setFormSubmission] = useState(false);
 
 	const handleEmail = (e) => {
 		setEmail(e.target.value);
@@ -28,7 +31,8 @@ const LoginPage = () => {
 			password: password,
 
 		};
-		axios.post("http://localhost:8080/api/therapists/login", userData)
+		if (email && password){
+		axios.post("http://localhost:8081/api/therapists/login", userData)
 			.then((response) => {
 				console.log(response.status, response.data)
 				sessionStorage.token = response.data.token
@@ -38,6 +42,11 @@ const LoginPage = () => {
 			.catch(error => {
 				console.error(error);
 			});
+		}
+			else {
+				setFormSubmission(true);
+				alert('Please fill in both fields.');
+			}
 
 	};
 
@@ -46,7 +55,7 @@ const LoginPage = () => {
 			<article className="loginIcon-container">
 				<img className="loginIcon" src={LoginImage} />
 			</article>
-			<header>
+			<header className="login-title">
 				<h1 className="login-header">LOGIN</h1>
 			</header>
 			<section className='loginpage'>
@@ -72,6 +81,12 @@ const LoginPage = () => {
 						<button type="submit" className="login__buttons-submit">
 							Submit
 						</button>
+						<Link to={`/home`}>
+							<button type="submit" className="login__buttons-goback">
+								Go Back
+							</button>
+						</Link>
+
 					</div>
 				</form>
 

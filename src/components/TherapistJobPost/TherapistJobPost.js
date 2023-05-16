@@ -5,18 +5,16 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 
-function TherapistJobPost({therapistID}) {
+function TherapistJobPost({ therapistID }) {
 
 	const [jobs, setJobs] = useState([]);
 	const [therapist__id] = useState(therapistID)
 
 
 	useEffect(() => {
-		axios.get('http://localhost:8080/api/cases')
+		axios.get('http://localhost:8081/api/cases')
 			.then(response => {
 				setJobs(response.data);
-				console.log(response.data)
-
 			})
 			.catch(error => {
 				console.error(error);
@@ -30,8 +28,8 @@ function TherapistJobPost({therapistID}) {
 			{jobs.map((jobpost) => (
 				<section className='jobpost'>
 					<div>
-					<p className='jobpost__header'>{jobpost.school_name}</p>
-					<p className='jobpost__type'>Type: {jobpost.type}</p>
+						<p className='jobpost__header'>{jobpost.school_name}</p>
+						<p className='jobpost__type'>Type: {jobpost.type}</p>
 
 					</div>
 					<div className='jobpost__info'>

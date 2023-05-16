@@ -17,7 +17,14 @@
   }
 
   &__logo{
-    height: 20rem;
+    height: 15rem;
+    padding-left: 2rem;
+  }
+
+  &__slogan{
+    text-align: center;
+    font-size: 1rem;
+    color: $dark-gray;  
   }
 
   &__buttons{

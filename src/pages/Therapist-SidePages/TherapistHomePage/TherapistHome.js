@@ -16,7 +16,7 @@ function TherapistHome() {
 	const [therapistDetails, setTherapistDetails] = useState({})
 
 	useEffect(() =>{
-		axios.get(`http://localhost:8080/api/therapists/${therapist_id}`)
+		axios.get(`http://localhost:8081/api/therapists/${therapist_id}`)
 			.then(response =>{
 				setTherapistDetails(response.data);
 
@@ -27,7 +27,7 @@ function TherapistHome() {
 	}, []);
 
 	return sessionStorage.token ? (
-		<div>
+		<>
 			<Nav/>
 			<div className="therapisthome">
 				<header >
@@ -39,7 +39,7 @@ function TherapistHome() {
 			</div>
 
 			<Footer therapistID={therapistID} />
-		</div>
+		</>
 
 	) : (
 		<Navigate to="/home" />

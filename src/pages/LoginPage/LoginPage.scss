@@ -3,41 +3,49 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/typography.scss";
 
-.loginIcon-container {
-  width: 100%;
-}
+// .loginIcon-container {
+//   max-width: 100%;
+// }
+
 .loginIcon {
-//   width: 100%;
-  padding-left: 2rem;
-  margin: 0;
+  height: 400px;
+  width: 300px;
+  padding-left: 1rem;
+  margin-top: 0;
+  // position: relative;
 }
 
-.login-page{
-	width: 100%;
+// .login-page {
+//   width: 100%;
+// }
+
+.login-title{
+  margin-top: -8rem;
 }
+
 .login-header {
   text-align: center;
   color: $dark-gray;
-  margin: -4rem;
 }
 
 .loginpage {
   margin-top: 4rem;
+  width: 100%;
 
-&__email {
-   border-radius: 10px;
-   height: 2rem;
-   width: 85%;
-   margin: 1rem;
-   border: 2px solid $yellow;
-}
+  &__email {
+    border-radius: 10px;
+    height: 2rem;
+    width: 85%;
+    margin: 1rem;
+    border: 2px solid $yellow;
+  }
 
   &__password {
-   border-radius: 10px;
-   height: 2rem;
-   width: 85%;
-   margin: 1rem;
-   border: 2px solid $yellow;
+    border-radius: 10px;
+    height: 2rem;
+    width: 85%;
+    margin: 1rem;
+    border: 2px solid $yellow;
   }
 }
 
@@ -51,4 +59,26 @@
   border: 2px solid $yellow;
   color: $dark-gray;
   background-color: $yellow;
+
+  &:hover{
+    cursor: pointer;
+    background-color: $gray;
+    transition: 0.5s ease;
+  }
+}
+.login__buttons-goback {
+  width: 75%;
+  margin-top: 0.75rem;
+  margin-left: 2.5rem;
+  height: 2rem;
+  border-radius: 10px;
+  color: $dark-gray;
+  border: none;
+  background-color: white;
+
+  &:hover{
+    cursor: pointer;
+    background-color: $gray;
+    transition: 0.5s ease;
+  }
 }

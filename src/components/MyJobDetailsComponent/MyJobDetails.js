@@ -8,7 +8,7 @@ function MyJobDetails({ therapistID, case_id }) {
 	const [jobs, setJobs] = useState([]);
 
 	useEffect(() => {
-		axios.get(`http://localhost:8080/api/cases/${therapistID}`)
+		axios.get(`http://localhost:8081/api/cases/${therapistID}`)
 			.then(response => {
 				setJobs(response.data);
 
@@ -21,19 +21,18 @@ function MyJobDetails({ therapistID, case_id }) {
 	return (
 		<>
 
-			<div>
+			<div className='container'>
 				{jobs.map((jobpost) => (
-					<section className='jobpost'>
+					<section className='myjobpost'>
 						<div>
-							<p className='jobpost__header'>{jobpost.school_name}</p>
-							<p className='jobpost__type'>Type: {jobpost.type}</p>
-
+							<p className='myjobpost__header'>{jobpost.school_name}</p>
+							<p className='myjobpost__type'>Type: {jobpost.type}</p>
 						</div>
-						<div className='jobpost__info'>
-							<p className='jobpost__date'>{jobpost.date_posted}</p>
+						<div className='myjobpost__info'>
+							<p className='myjobpost__date'>{jobpost.date_posted}</p>
 							<section>
 								<Link to={`/myjobdetails/${therapistID}/${jobpost.case_id}`} state={jobpost.case_id} >
-									<button className='jobpost__button' >View Details</button>
+									<button className='myjobpost__button' >View Details</button>
 								</Link>
 							</section>
 						</div>

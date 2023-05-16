@@ -44,7 +44,7 @@ function RegisPage() {
 			last_name: last_name,
 			license_number: license_number
 		};
-		axios.post("http://localhost:8080/api/therapists/signup", userData)
+		axios.post("http://localhost:8081/api/therapists/signup", userData)
 			.then((response) => {
 				console.log(response.status, response.data)
 				navigate('/login')

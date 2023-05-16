@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { useEffect } from 'react';
 import { Link, useParams, useLocation } from "react-router-dom";
+import './MyJobDetailsPage.scss'
 
 function MyJobDetailsPage(props) {
 
@@ -13,7 +14,7 @@ function MyJobDetailsPage(props) {
 	const [job, setJob] = useState([]);
 
 	useEffect(() => {
-		axios.get(`http://localhost:8080/api/cases/case/${therapistID}/${caseID}`)
+		axios.get(`http://localhost:8081/api/cases/case/${therapistID}/${caseID}`)
 			.then(response => {
 				setJob(response.data[0]);
 			})
@@ -26,21 +27,24 @@ function MyJobDetailsPage(props) {
 		<div >
 			<Nav />
 
-			<div className="jobdetails">
-				<h2 className="jobdetails__school">{job.school_name}</h2>
-				<section >
-					<p className="jobdetails__adress">Address:</p>
-					<p className="jobdetails__adress-info">{job.school_address}</p>
+			<div className="jobdetail">
+				<header className="school">
+					<h2 className="jobdetail__school">{job.school_name}</h2>
+
+				</header>
+				<section className="jobdetail-address">
+					<p className="jobdetail-address__title">Address:</p>
+					<p className="jobdetail-address__info">{job.school_address}</p>
 				</section>
 
-				<section>
-					<div >
-						<p className="jobdetails__date">Date Posted</p>
-						<p className="jobdetails__date-info">{job.date_posted}</p>
+				<section className="details">
+					<div className="details-date">
+						<p className="details-date__header">Date Posted</p>
+						<p className="details-date__info">{job.date_posted}</p>
 					</div>
-					<div>
-						<p className="jobdetails__type">Type:</p>
-						<p className="jobdetails__type-info">{job.type}</p>
+					<div className="details-type">
+						<p className="details-type__header">Type:</p>
+						<p className="details-type__info">{job.type}</p>
 					</div>
 				</section>
 
@@ -56,7 +60,7 @@ function MyJobDetailsPage(props) {
 						<button className="jobButtons__completed">COMPLETED</button>
 					</Link>
 					<Link to={`/myjobs/${therapistID}`}>
-						<button className="studentinfo__remove">REMOVE</button>
+						<button className="jobButtons__remove">REMOVE</button>
 					</Link>
 				</div>
 
