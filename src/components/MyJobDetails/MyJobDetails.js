@@ -1,41 +1,48 @@
 import './MyJobDetails.scss';
-import cases from '../../data/cases.json';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-function MyJobDetails( {therapistDetails}) {
+function MyJobDetails({ therapistID, case_id }) {
 
-	console.log(therapistDetails.id)
+	const [jobs, setJobs] = useState([]);
+
+	useEffect(() => {
+		axios.get(`http://localhost:8080/api/cases/${therapistID}`)
+			.then(response => {
+				setJobs(response.data);
+				console.log(response.data)
+
+			})
+			.catch(error => {
+				console.error(error);
+			});
+	}, []);
 
 	return (
-		<>	
-			
-			<header className='myjobdetails'>
-			<h2 className='myjobdetails__header'>PINECREST ELEMENTARY</h2>
-			</header>
+		<>
 
-			<section className='myjobdetails-info'>
-				<p className='myjobdetails-info__address-header'>Address:</p>
-				<p className='myjobdetails-info__address'>10250 SW 57th Avenue, Pinecrest, FL 33156</p>
-			</section>
-			<section className='myjobdetails-info2'>
-				<div className='myjobdetails-info2__date-details'>
-					<p className='myjobdetails-info2__date-header'>Date Posted</p>
-					<p className='myjobdetails-info2__date'>May 23, 2023</p>
-				</div>
-				<div className='myjobdetails-type__details'>
-					<p className='myjobdetails-type__header'>Type:</p>
-					<p className='myjobdetails-type'>Evaluation</p>
-				</div>
-			</section>
-			<section className='myjobdetails__student'>
-				<p>Student Information</p>
-				<p>ID: 0123456</p>
-				<p>DOB: 03-31-2016</p>
-				<p>Grade level: 2</p>
-			</section>
-			
 			<div>
-				<button >VIEW DETAILS</button>
+				{jobs.map((jobpost) => (
+					<section className='jobpost'>
+						<div>
+							<p className='jobpost__header'>{jobpost.school_name}</p>
+							<p className='jobpost__type'>Type: {jobpost.type}</p>
+
+						</div>
+						<div className='jobpost__info'>
+							<p className='jobpost__date'>{jobpost.date_posted}</p>
+							<section>
+								<Link to={`/myjobdetails/${therapistID}/${jobpost.case_id}`} state={jobpost.case_id} >
+									<button className='jobpost__button' >View Details</button>
+								</Link>
+							</section>
+						</div>
+					</section>
+				)
+				)}
 			</div>
+		
 
 		</>
 	);

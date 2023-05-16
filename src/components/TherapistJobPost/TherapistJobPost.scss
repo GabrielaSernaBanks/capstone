@@ -16,21 +16,29 @@
     padding-left: 0.4rem;
     font-weight: 700;
     font-size: 0.95rem;
+    margin: 0.25rem;
+  }
+
+  &__type{
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding-left: 0.5rem;
   }
 
   &__info{
-    padding-left: 0.4rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: 0.75rem;
     font-weight: 500;
-    padding-bottom: 1rem;
+    margin-top: -0.5rem;
+
   }
 
   &__button{
-    border-color: rgb(244, 243, 243);
-    border-radius: 8px;
+    border: 1px solid $gray;
+    // border-color: rgb(244, 243, 243);
+    border-radius: 10px;
     background-color: $yellow;
   }
 

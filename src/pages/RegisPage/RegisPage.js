@@ -1,5 +1,5 @@
 import "./RegisPage.scss";
-import regisicon from "../../assets/register.svg";
+import regisicon from "../../assets/regis.svg";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
@@ -56,50 +56,62 @@ function RegisPage() {
 			.catch(error => {
 				console.error(error);
 			});
-		};
+	};
 
 
 	return (
-		<>
-			<section className="regis">
-				<h1 className="regis__header">Registration</h1>
-				<image className="regis__image" src={regisicon} />
 
-				<form onSubmit={submitHandler}>
-					<input 
-					value={first_name} 
-					placeholder="First Name" 
-					type="text" 
-					onChange={handleFirstName} 
-					/>
-					<input value={last_name} placeholder="Last Name" type="text" onChange={handleLastName} />
-					<input
-						placeholder="License Number"
-						type="text"
-						value={license_number}
-						onChange={handleLicense}
-					/>
-					<input 
-					value={email} 
-					placeholder="Email" 
-					type="email" 
-					onChange={handleEmail} 
-					/>
-					<input
-						placeholder="Password"
-						type="password"
-						value={password}
-						onChange={handlePassword}
-					/>
-					Password
-					<div className="regis__buttons">
-						<button type="sumbit" className="regis__buttons-submit">
-							Submit
-						</button>
-					</div>
-				</form>
-			</section>
-		</>
+		<section className="registration-page">
+
+			<article className="regis__image-container">
+				<img className="regis__image" src={regisicon} />
+			</article>
+			<header>
+				<h1 className="regis__header">Registration</h1>
+			</header>
+
+			<section className="regis-form">
+			<form  onSubmit={submitHandler}>
+				<input
+					className="regis-form__first-name"
+					value={first_name}
+					placeholder="First Name"
+					type="text"
+					onChange={handleFirstName}
+				/>
+				<input className="regis-form__last-name" value={last_name} placeholder="Last Name" type="text" onChange={handleLastName} />
+				<input
+					className="regis-form__license"
+					placeholder="License Number"
+					type="text"
+					value={license_number}
+					onChange={handleLicense}
+				/>
+				<input
+					className="regis-form__email"
+					value={email}
+					placeholder="Email"
+					type="email"
+					onChange={handleEmail}
+				/>
+				<input
+					className="regis-form__password"
+					placeholder="Password"
+					type="password"
+					value={password}
+					onChange={handlePassword}
+				/>
+				<div className="regis__buttons">
+					<button type="sumbit" className="regis__buttons-submit">
+						Submit
+					</button>
+				</div>
+			</form>
+		</section>
+		</section>
+
+
+
 	);
 }
 

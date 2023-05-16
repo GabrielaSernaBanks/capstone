@@ -1,61 +1,95 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import './SingleJobDetails.scss';
 import Nav from "../../../components/Nav/Nav";
 import Footer from "../../../components/Footer/Footer";
 import { Navigate } from "react-router-dom";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
-function SingleJobDetails() {
+function SingleJobDetails(props) {
+
+	const navigate = useNavigate();
+	const location = useLocation();
+	const therapistID = location.state;
 
 	const { case_id } = useParams();
-	const [caseInfo, setCaseInfo] = useState([]);
-	const data = require('../../../data/cases.json');
-	const item = data.find((item) => item.case_id === case_id);
+	const [job, setJob] = useState({});
 
+	useEffect(() => {
+		axios.get(`http://localhost:8080/api/cases/case/${case_id}`)
+			.then(response => {
+				setJob(response.data[0]);
+				console.log(response.data[0], "single case")
+
+			})
+			.catch(error => {
+				console.error(error);
+			});
+	}, []);
+
+	//i need help with the backend PUT request for this
+	const submitHandler = (e) => {
+		e.preventDefault();
+		const userData = {
+			therapist_id: therapistID,
+		};
+		axios.put(`http://localhost:8080/api/cases/changecase/${case_id}`, userData)
+			.then((response) => {
+				console.log(response.status, response.data)
+				alert('You just added this job to your list!')
+				navigate(`/myjobs/${therapistID}`)
+			})
+			.catch(error => {
+				console.error(error);
+			});
+
+	};
 
 
 	return sessionStorage.token ? (
+
 		<>
 			<Nav />
 
 			<div className="jobdetails">
 				<header className='jobdetails__header'>
-					<h2>{item.school_name}</h2>
+					<h2>{job.school_name}</h2>
 				</header>
 
 				<section className="jobdetails__address">
 					<p className="jobdetails__address-header">ADDRESS:</p>
-					<p className="jobdetails__address-info">{item.school_address}</p>
+					<p className="jobdetails__address-info">{job.school_address}</p>
 				</section>
 
 				<section className="jobdetails__info">
 					<div className="jobdetails__info-date">
 						<p className="jobdetails__info-date-header">DATE POSTED</p>
-						<p className="jobdetails__info-date-info">{item.date_posted}</p>
+						<p className="jobdetails__info-date-info">{job.date_posted}</p>
 					</div>
 					<div className="jobdetails__info-type">
 						<p className="jobdetails__info-type-header">TYPE</p>
-						<p className="jobdetails__info-type-info">{item.type}</p>
+						<p className="jobdetails__info-type-info">{job.type}</p>
 					</div>
 				</section>
 
 				<section className="jobdetails__student">
 					<p className="jobdetails__student-header">STUDENT INFORMATION</p>
-					<p className="jobdetails__student-id">ID Number: {item.student_id}</p>
-					<p className="jobdetails__student-dob">Date of Birth: {item.student_dob}</p>
-					<p className="jobdetails__student-grade">Grade Level: {item.student_grade}</p>
+					<p className="jobdetails__student-id">ID Number: {job.student_id}</p>
+					<p className="jobdetails__student-dob">Date of Birth: {job.student_dob}</p>
+					<p className="jobdetails__student-grade">Grade Level: {job.student_grade}</p>
 				</section>
 
 				<div className="jobdetails-buttons">
-					<button className="jobdetails-buttons__accept">ACCEPT JOB</button>
-					<Link to={`/therapisthome`}>
+					<button className="jobdetails-buttons__accept" onClick={submitHandler}>ACCEPT JOB</button>
+					<Link to={`/therapisthome/c39ba8c2-8134-47e3-9ec8-259a6d07a30d`}>
 						<button className="jobdetails-buttons__goback">GO BACK</button>
 					</Link>
 				</div>
 
 			</div>
-			<Footer />
+			<Footer therapistID={therapistID}/>
 		</>
 	) : (
 		<Navigate to="/home"/>

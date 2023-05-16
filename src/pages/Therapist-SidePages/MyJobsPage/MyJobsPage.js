@@ -6,14 +6,14 @@ import './MyJobsPage.scss'
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
-
-
+import MyJobDetailsPage from "../MyJobDetailsPage/MyJobDetailsPage";
 
 function MyJobs() {
 
 const {therapist_id} = useParams();
+const [therapistID, setTherapistID] = useState(`${therapist_id}`);
 
+console.log(therapist_id, 'from threapist page');
 const [therapistDetails, setTherapistDetails] = useState({})
 
 useEffect(() =>{
@@ -27,8 +27,6 @@ useEffect(() =>{
 			console.error(error);
 	});
 }, []);
-
-
 
 	return (
 
@@ -47,10 +45,10 @@ useEffect(() =>{
 
 			<h2 className="myjobspage-header">My Jobs</h2>
 
-			{<MyJobDetails therapistDetails={therapistDetails} />}
+			{<MyJobDetails therapistID={therapistID} />}
 			</div>
 
-			<Footer />
+			<Footer therapistID={therapistID}/>
 
 
 		</div>

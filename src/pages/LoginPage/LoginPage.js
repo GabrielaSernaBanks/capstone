@@ -30,10 +30,10 @@ const LoginPage = () => {
 		};
 		axios.post("http://localhost:8080/api/therapists/login", userData)
 			.then((response) => {
-				console.log(response.data)
+				console.log(response.status, response.data)
 				sessionStorage.token = response.data.token
 				setToken(response.data.token)
-				navigate('/therapisthome')
+				navigate(`/therapisthome/${response.data.user.id}`)
 			})
 			.catch(error => {
 				console.error(error);
@@ -45,10 +45,11 @@ const LoginPage = () => {
 
 
 	return (
-		<section>
-			<header>
+		<section className="login-page">
+			<article className="loginIcon-container">
 				<img className="loginIcon" src={LoginImage} />
-
+			</article>
+			<header>
 				<h1 className="login-header">LOGIN</h1>
 			</header>
 			<section className='loginpage'>

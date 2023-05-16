@@ -3,29 +3,48 @@ import TherapistJobPost from "../../../components/TherapistJobPost/TherapistJobP
 import Nav from "../../../components/Nav/Nav";
 import './TherapistHome.scss'
 import { Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 
 function TherapistHome() {
 
+	const {therapist_id} = useParams();
+	const [therapistID, setTherapistID] = useState(`${therapist_id}`);
+	const [therapistDetails, setTherapistDetails] = useState({})
 
 
-return sessionStorage.token ? (
-	<div>
-	<Nav />
-	<div className="therapisthome">
-		<header >
-			<h2 className="therapisthome__header">Welcome Back, Therapist Name</h2>
-		</header>
-		<section className="therapisthome__post">
-			<TherapistJobPost />
-		</section>
-	</div>
-	<Footer />
-</div>
+	useEffect(() =>{
+		axios.get(`http://localhost:8080/api/therapists/${therapist_id}`)
+			.then(response =>{
+				setTherapistDetails(response.data);
 
-) : (
-	<Navigate to="/home"/>
-)
+			})
+			.catch(error => {
+				console.error(error);
+		});
+	}, []);
+
+	return sessionStorage.token ? (
+		<div>
+			<Nav/>
+			<div className="therapisthome">
+				<header >
+					<h2 className="therapisthome__header">Welcome Back, {therapistDetails.first_name}</h2>
+				</header>
+				<section className="therapisthome__post">
+					<TherapistJobPost therapistID={therapistID}/>
+				</section>
+			</div>
+
+			<Footer therapistID={therapistID} />
+		</div>
+
+	) : (
+		<Navigate to="/home" />
+	)
 
 }
 

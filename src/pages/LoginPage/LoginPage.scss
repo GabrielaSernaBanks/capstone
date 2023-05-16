@@ -3,48 +3,52 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/typography.scss";
 
-.loginIcon{
-height: 15rem;
-color: black;
-margin: 1rem;
-padding-left: 4rem;
+.loginIcon-container {
+  width: 100%;
+}
+.loginIcon {
+//   width: 100%;
+  padding-left: 2rem;
+  margin: 0;
 }
 
-.login-header{
-	margin: 1rem;
-	text-align: center;
-	color: $dark-gray;
+.login-page{
+	width: 100%;
+}
+.login-header {
+  text-align: center;
+  color: $dark-gray;
+  margin: -4rem;
 }
 
-.loginpage{
+.loginpage {
+  margin-top: 4rem;
 
-	&__email{
-		border-radius: 10px;
-		height: 2rem;
-		width: 90%;
-		margin: 1rem;
-		border: 2px solid $yellow;
-
-	}
-
-	&__password{
-		border-radius: 10px;
-		border: 2px solid $yellow;
-
-		height: 2rem;
-		width: 90%;
-		margin: 1rem;
-	}
+&__email {
+   border-radius: 10px;
+   height: 2rem;
+   width: 85%;
+   margin: 1rem;
+   border: 2px solid $yellow;
 }
 
-.login__buttons-submit{
-	width: 90%;
-	margin-top: 0.75rem;
-	margin-left: 1rem;
-	height: 2rem;
-	border-radius: 10px;
-	border: none;
-	border: 2px solid $yellow;
-	color: $dark-gray;
-	background-color: $yellow;
+  &__password {
+   border-radius: 10px;
+   height: 2rem;
+   width: 85%;
+   margin: 1rem;
+   border: 2px solid $yellow;
+  }
+}
+
+.login__buttons-submit {
+  width: 75%;
+  margin-top: 0.75rem;
+  margin-left: 2.5rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  border: 2px solid $yellow;
+  color: $dark-gray;
+  background-color: $yellow;
 }

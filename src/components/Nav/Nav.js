@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function Nav() {
+function Nav( ) {
 
 	const navigate = useNavigate();
 

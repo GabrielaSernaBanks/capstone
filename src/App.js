@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TherapistHomePage from './pages/Therapist-SidePages/TherapistHomePage/TherapistHome';
 import MyJobs from './pages/Therapist-SidePages/MyJobsPage/MyJobsPage';
-import MyJobDetails from './pages/Therapist-SidePages/MyJobDetailsPage/MyJobDetails';
+import MyJobDetails from './pages/Therapist-SidePages/MyJobDetailsPage/MyJobDetailsPage';
 import EditTherapistPage from './pages/Therapist-SidePages/EditTherapistPage/EditTherapistPage';
 import SchoolHomePage from './pages/School-SidePages/SchoolHomePage/SchoolHomePage';
 import AssignedCasesPage from './pages/School-SidePages/AssignedCasesPage/AssignedCasesPage';
@@ -16,20 +16,23 @@ import AddCasePage from './pages/School-SidePages/AddCasePage/AddCasePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisPage from './pages/RegisPage/RegisPage';
 import SingleJobDetails from './pages/Therapist-SidePages/SingleJobDetails/SingleJobDetails';
-
+import MyJobDetailsPage from './pages/Therapist-SidePages/MyJobDetailsPage/MyJobDetailsPage';
+ 
 
 function App() {
+
 	return (
 		<div >
 			<BrowserRouter>
+
 				<Routes>
 					<Route exact path='/home' element={<HomePage />} />
 					<Route path='/login' element={<LoginPage />} />
 					<Route path='/register' element={<RegisPage />} />
-					<Route path='/therapisthome' element={<TherapistHomePage />} />
+					<Route path='/therapisthome/:therapist_id' element={<TherapistHomePage />} />
 					<Route path='/jobdetails/:case_id' element={<SingleJobDetails />} />
 					<Route path='/myjobs/:therapist_id' element={<MyJobs />} />
-					<Route path='/myjobdetails/:therapist_id/:case_id' element={<MyJobDetails />} />
+					<Route path='/myjobdetails/:therapistID/:case_id' element={<MyJobDetailsPage />} />
 					<Route path='/edittherapist/:therapist_id' element={<EditTherapistPage />} />
 					<Route path='/schoolhome' element={<SchoolHomePage />} />
 					<Route path='/assignedcases' element={<AssignedCasesPage />} />
