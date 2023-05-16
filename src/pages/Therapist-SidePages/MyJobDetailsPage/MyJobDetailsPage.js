@@ -16,7 +16,6 @@ function MyJobDetailsPage(props) {
 		axios.get(`http://localhost:8080/api/cases/case/${therapistID}/${caseID}`)
 			.then(response => {
 				setJob(response.data[0]);
-				console.log(response.data[0])
 			})
 			.catch(error => {
 				console.error(error);

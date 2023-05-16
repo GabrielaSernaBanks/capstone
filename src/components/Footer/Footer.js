@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 
 function Footer({therapistID}) {
-console.log(therapistID, 'from footer');
   return (
 
     <div className='footer'>

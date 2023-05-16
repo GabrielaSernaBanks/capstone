@@ -21,8 +21,6 @@ function SingleJobDetails(props) {
 		axios.get(`http://localhost:8080/api/cases/case/${case_id}`)
 			.then(response => {
 				setJob(response.data[0]);
-				console.log(response.data[0], "single case")
-
 			})
 			.catch(error => {
 				console.error(error);
@@ -83,7 +81,7 @@ function SingleJobDetails(props) {
 
 				<div className="jobdetails-buttons">
 					<button className="jobdetails-buttons__accept" onClick={submitHandler}>ACCEPT JOB</button>
-					<Link to={`/therapisthome/c39ba8c2-8134-47e3-9ec8-259a6d07a30d`}>
+					<Link to={`/therapisthome/${therapistID}`}>
 						<button className="jobdetails-buttons__goback">GO BACK</button>
 					</Link>
 				</div>

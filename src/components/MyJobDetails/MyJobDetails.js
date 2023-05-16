@@ -11,7 +11,6 @@ function MyJobDetails({ therapistID, case_id }) {
 		axios.get(`http://localhost:8080/api/cases/${therapistID}`)
 			.then(response => {
 				setJobs(response.data);
-				console.log(response.data)
 
 			})
 			.catch(error => {

@@ -1,6 +1,5 @@
 import Footer from "../../../components/Footer/Footer";
 import Nav from "../../../components/Nav/Nav";
-import therapistInfo from '../../../data/therapists.json'
 import MyJobDetails from "../../../components/MyJobDetails/MyJobDetails";
 import './MyJobsPage.scss'
 import { useParams } from "react-router-dom";
@@ -12,15 +11,12 @@ function MyJobs() {
 
 const {therapist_id} = useParams();
 const [therapistID, setTherapistID] = useState(`${therapist_id}`);
-
-console.log(therapist_id, 'from threapist page');
 const [therapistDetails, setTherapistDetails] = useState({})
 
 useEffect(() =>{
 	axios.get(`http://localhost:8080/api/therapists/${therapist_id}`)
 		.then(response =>{
 			setTherapistDetails(response.data);
-			console.log(response.data)
 
 		})
 		.catch(error => {

@@ -41,9 +41,6 @@ const LoginPage = () => {
 
 	};
 
-	console.log(stateToken)
-
-
 	return (
 		<section className="login-page">
 			<article className="loginIcon-container">

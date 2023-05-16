@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function RegisPage() {
-	// const baseURL = 'http://localhost:8080/api/therapists/';
 
 	let navigate = useNavigate();
 
@@ -34,8 +33,6 @@ function RegisPage() {
 	const handleLicense = (e) => {
 		setLicense(e.target.value);
 	};
-
-
 
 	const submitHandler = (e) => {
 		e.preventDefault();
@@ -109,8 +106,6 @@ function RegisPage() {
 			</form>
 		</section>
 		</section>
-
-
 
 	);
 }

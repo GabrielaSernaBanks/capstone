@@ -15,7 +15,6 @@ function TherapistHome() {
 	const [therapistID, setTherapistID] = useState(`${therapist_id}`);
 	const [therapistDetails, setTherapistDetails] = useState({})
 
-
 	useEffect(() =>{
 		axios.get(`http://localhost:8080/api/therapists/${therapist_id}`)
 			.then(response =>{

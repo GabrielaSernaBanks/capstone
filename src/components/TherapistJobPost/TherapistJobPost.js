@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 
 
 function TherapistJobPost({therapistID}) {
-console.log(therapistID, "from THERAPOST")
 
 	const [jobs, setJobs] = useState([]);
 	const [therapist__id] = useState(therapistID)
