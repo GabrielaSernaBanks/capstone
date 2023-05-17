@@ -7,6 +7,7 @@ import { Link, useParams, useLocation } from "react-router-dom";
 import './MyJobDetailsPage.scss';
 import { motion as m } from "framer-motion";
 
+const port = process.env.REACT_APP_PORT;
 
 function MyJobDetailsPage(props) {
 
@@ -16,7 +17,7 @@ function MyJobDetailsPage(props) {
 	const [job, setJob] = useState([]);
 
 	useEffect(() => {
-		axios.get(`http://localhost:8081/api/cases/case/${therapistID}/${caseID}`)
+		axios.get(`${port}/cases/case/${therapistID}/${caseID}`)
 			.then(response => {
 				setJob(response.data[0]);
 			})

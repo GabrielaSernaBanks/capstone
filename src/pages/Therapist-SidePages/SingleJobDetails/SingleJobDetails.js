@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { motion as m } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 
+const port = process.env.REACT_APP_PORT;
+
 
 function SingleJobDetails(props) {
 
@@ -20,7 +22,7 @@ function SingleJobDetails(props) {
 	const [job, setJob] = useState({});
 
 	useEffect(() => {
-		axios.get(`http://localhost:8081/api/cases/case/${case_id}`)
+		axios.get(`${port}/cases/case/${case_id}`)
 			.then(response => {
 				setJob(response.data[0]);
 			})
@@ -35,7 +37,7 @@ function SingleJobDetails(props) {
 		const userData = {
 			therapist_id: therapistID,
 		};
-		axios.put(`http://localhost:8081/api/cases/changecase/${case_id}`, userData)
+		axios.put(`${port}/cases/changecase/${case_id}`, userData)
 			.then((response) => {
 				console.log(response.status, response.data)
 				alert('You just added this job to your list!')

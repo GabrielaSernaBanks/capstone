@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import MyJobDetailsPage from "../MyJobDetailsPage/MyJobDetailsPage";
 
+const port = process.env.REACT_APP_PORT;
+
 function MyJobs() {
 
 const {therapist_id} = useParams();
@@ -14,7 +16,7 @@ const [therapistID, setTherapistID] = useState(`${therapist_id}`);
 const [therapistDetails, setTherapistDetails] = useState({})
 
 useEffect(() =>{
-	axios.get(`http://localhost:8081/api/therapists/${therapist_id}`)
+	axios.get(`${port}/therapists/${therapist_id}`)
 		.then(response =>{
 			setTherapistDetails(response.data);
 

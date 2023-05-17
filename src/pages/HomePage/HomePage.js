@@ -6,7 +6,6 @@ const HomePage = () => {
 
 	return (
 		<section className='homepage'>
-			{/* <h1 className='homepage__header'>The Hive</h1> */}
 			<img className='homepage__logo' src={Logo} />
 			<p className='homepage__slogan'>Streamlining speech and language therapy for all.</p>
 			<div className='homepage__buttons'>

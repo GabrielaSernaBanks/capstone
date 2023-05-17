@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-
+const port = process.env.REACT_APP_PORT;
 
 
 function TherapistHome() {
@@ -17,7 +17,7 @@ function TherapistHome() {
 	const [therapistDetails, setTherapistDetails] = useState({})
 
 	useEffect(() =>{
-		axios.get(`http://localhost:8081/api/therapists/${therapist_id}`)
+		axios.get(`${port}/therapists/${therapist_id}`)
 			.then(response =>{
 				setTherapistDetails(response.data);
 

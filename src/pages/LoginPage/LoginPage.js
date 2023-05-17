@@ -5,6 +5,7 @@ import './LoginPage.scss';
 import LoginImage from '../../assets/login2.svg';
 import { Link } from 'react-router-dom';
 
+const port = process.env.REACT_APP_PORT;
 
 const LoginPage = () => {
 
@@ -32,7 +33,7 @@ const LoginPage = () => {
 
 		};
 		if (email && password){
-		axios.post("http://localhost:8081/api/therapists/login", userData)
+		axios.post(`${port}/therapists/login`, userData)
 			.then((response) => {
 				console.log(response.status, response.data)
 				sessionStorage.token = response.data.token

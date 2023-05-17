@@ -2,13 +2,15 @@ import './MyJobDetails.scss';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+const port = process.env.REACT_APP_PORT;
+
 
 function MyJobDetails({ therapistID, case_id }) {
 
 	const [jobs, setJobs] = useState([]);
 
 	useEffect(() => {
-		axios.get(`http://localhost:8081/api/cases/${therapistID}`)
+		axios.get(`${port}/cases/${therapistID}`)
 			.then(response => {
 				setJobs(response.data);
 

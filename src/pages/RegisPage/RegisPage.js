@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
+const port = process.env.REACT_APP_PORT;
+
 
 function RegisPage() {
 
@@ -46,7 +48,7 @@ function RegisPage() {
 			last_name: last_name,
 			license_number: license_number
 		};
-		axios.post("http://localhost:8081/api/therapists/signup", userData)
+		axios.post(`${port}/therapists/signup`, userData)
 			.then((response) => {
 				console.log(response.status, response.data)
 				navigate('/login')
