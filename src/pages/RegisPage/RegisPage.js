@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 function RegisPage() {
-	const port = process.env.REACT_APP_PORT;
+	const port = process.env.REACT_APP_API_URL;
 
 	let navigate = useNavigate();
 

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { motion as m } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 
-const port = process.env.REACT_APP_PORT;
+const port = process.env.REACT_APP_API_URL;
 
 
 function SingleJobDetails(props) {

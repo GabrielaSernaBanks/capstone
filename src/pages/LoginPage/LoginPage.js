@@ -6,7 +6,7 @@ import LoginImage from '../../assets/login2.svg';
 import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
-	const port = process.env.REACT_APP_PORT;
+	const port = process.env.REACT_APP_API_URL;
 	console.log(port)
 
 	const navigate = useNavigate();

@@ -7,7 +7,7 @@ import { Link, useParams, useLocation } from "react-router-dom";
 import './MyJobDetailsPage.scss';
 import { motion as m } from "framer-motion";
 
-const port = process.env.REACT_APP_PORT;
+const port = process.env.REACT_APP_API_URL;
 
 function MyJobDetailsPage(props) {
 

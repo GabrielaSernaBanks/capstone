@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const port = process.env.REACT_APP_PORT;
+const port = process.env.REACT_APP_API_URL;
 
 
 function TherapistHome() {
