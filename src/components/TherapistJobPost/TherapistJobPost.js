@@ -6,13 +6,13 @@ import { useEffect, useState } from 'react';
 
 
 function TherapistJobPost({ therapistID }) {
-
+	const port = process.env.REACT_APP_API_URL;
 	const [jobs, setJobs] = useState([]);
 	const [therapist__id] = useState(therapistID)
 
 
 	useEffect(() => {
-		axios.get('http://localhost:8081/api/cases')
+		axios.get(`${port}/api/cases`)
 			.then(response => {
 				setJobs(response.data);
 			})
