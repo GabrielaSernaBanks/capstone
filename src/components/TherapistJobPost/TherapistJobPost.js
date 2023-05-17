@@ -12,7 +12,7 @@ function TherapistJobPost({ therapistID }) {
 
 
 	useEffect(() => {
-		axios.get(`${port}/api/cases`)
+		axios.get(`${port}/cases`)
 			.then(response => {
 				setJobs(response.data);
 			})
