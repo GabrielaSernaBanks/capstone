@@ -9,6 +9,7 @@ import axios from 'axios';
 
 
 
+
 function TherapistHome() {
 
 	const {therapist_id} = useParams();
@@ -33,9 +34,12 @@ function TherapistHome() {
 				<header >
 					<h2 className="therapisthome__header">Welcome Back, {therapistDetails.first_name}</h2>
 				</header>
+
+			
 				<section className="therapisthome__post">
 					<TherapistJobPost therapistID={therapistID}/>
 				</section>
+
 			</div>
 
 			<Footer therapistID={therapistID} />

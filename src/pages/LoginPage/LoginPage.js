@@ -79,11 +79,11 @@ const LoginPage = () => {
 
 					<div className="login__buttons">
 						<button type="submit" className="login__buttons-submit">
-							Submit
+							SUBMIT
 						</button>
 						<Link to={`/home`}>
 							<button type="submit" className="login__buttons-goback">
-								Go Back
+								GO BACK
 							</button>
 						</Link>
 

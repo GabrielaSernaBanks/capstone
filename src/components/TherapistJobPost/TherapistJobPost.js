@@ -33,7 +33,7 @@ function TherapistJobPost({ therapistID }) {
 
 					</div>
 					<div className='jobpost__info'>
-						<p className='jobpost__date'>{jobpost.date_posted}</p>
+						<p className='jobpost__date'>Date Posted:{jobpost.date_posted}</p>
 						<section>
 							<Link to={`/jobdetails/${jobpost.case_id}`} state={therapist__id}>
 								<button className='jobpost__button' >View Details</button>

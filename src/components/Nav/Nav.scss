@@ -10,9 +10,11 @@
   border-bottom: 1px solid $gray;
   height: 3rem; 
 
-  &__header{
-    padding-left: 1rem; 
-    color: $dark-gray;
+
+  &__logo{
+    height:190px;
+    margin-left: -2rem;
+    // width: 100px;
   }
 
   &__button{

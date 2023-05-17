@@ -4,7 +4,9 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { useEffect } from 'react';
 import { Link, useParams, useLocation } from "react-router-dom";
-import './MyJobDetailsPage.scss'
+import './MyJobDetailsPage.scss';
+import { motion as m } from "framer-motion";
+
 
 function MyJobDetailsPage(props) {
 
@@ -27,11 +29,18 @@ function MyJobDetailsPage(props) {
 		<div >
 			<Nav />
 
-			<div className="jobdetail">
-				<header className="school">
+			<m.div className="jobdetail"
+							animate={{ y: "0%" }}
+							exit={{ opacity: 1 }}
+							initial={{ y: "100%" }}
+							transition={{ duration: 0.5, ease: "easeOut" }}>
+				<m.header className="school"
+									animate={{ y: 0 }}
+									initial={{ y: "100%" }}
+									transition={{ duration: 0.5,  ease: "easeOut"  }}>
 					<h2 className="jobdetail__school">{job.school_name}</h2>
 
-				</header>
+				</m.header>
 				<section className="jobdetail-address">
 					<p className="jobdetail-address__title">Address:</p>
 					<p className="jobdetail-address__info">{job.school_address}</p>
@@ -64,7 +73,7 @@ function MyJobDetailsPage(props) {
 					</Link>
 				</div>
 
-			</div>
+			</m.div>
 
 
 			<Footer />

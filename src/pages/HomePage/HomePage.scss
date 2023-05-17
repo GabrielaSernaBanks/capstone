@@ -7,21 +7,22 @@
   margin: 0 auto;
   width: 100%;
   background-color: rgb(250, 239, 165);
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 
   &__header{
     padding-top: 8rem;
     margin: 0;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: $dark-gray;
     font-family: 'Montserrat';
   }
 
   &__logo{
-    height: 15rem;
-    padding-left: 2rem;
-    
+    height: 20rem;
+    margin: 0 auto;  
+    padding-top: 4rem;
+  
   }
 
   &__slogan{
@@ -29,13 +30,14 @@
     font-size: 1.3rem;
     color: $dark-gray;  
     font-weight: 300;
-    margin-top: -2rem;
+    margin: 2rem;
+    margin-top: -6rem;
   }
 
   &__buttons{
     display: flex;
     flex-direction: column;
-    margin-top: 3.5rem;
+    margin-top: 6rem;
     padding-bottom: 4rem;
     padding-left: 2rem;
     }

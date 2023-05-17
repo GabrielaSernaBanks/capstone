@@ -3,6 +3,8 @@ import regisicon from "../../assets/regis.svg";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
+
 
 function RegisPage() {
 
@@ -100,8 +102,13 @@ function RegisPage() {
 				/>
 				<div className="regis__buttons">
 					<button type="sumbit" className="regis__buttons-submit">
-						Submit
+						SUBMIT
 					</button>
+					<Link to={`/home`}>
+							<button type="submit" className="login__buttons-goback">
+								GO BACK
+							</button>
+						</Link>
 				</div>
 			</form>
 		</section>

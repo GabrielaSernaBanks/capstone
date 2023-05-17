@@ -1,6 +1,6 @@
 import './Nav.scss';
 import { useNavigate } from "react-router-dom";
-
+import hive from '../../assets/hivelogo.svg'
 
 
 function Nav( ) {
@@ -18,7 +18,8 @@ function Nav( ) {
 
 	return (
 			<div className='nav' >
-				<h1 className='nav__header'>The Hive</h1>
+				<img className='nav__logo' src={hive}/>
+				{/* <h1 className='nav__header'>hi</h1> */}
 				<button 
 				onClick={logOut}
 				size="medium" variant="contained" className='nav__button'>LOGOUT</button>
