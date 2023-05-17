@@ -8,14 +8,14 @@ const HomePage = () => {
 		<section className='homepage'>
 			<h1 className='homepage__header'>The Hive</h1>
 			<img className='homepage__logo' src={Logo} />
-			<p className='homepage__slogan'>Streamlining speech and language therapy for all students.</p>
+			<p className='homepage__slogan'>Streamlining speech and language therapy for all.</p>
 			<div className='homepage__buttons'>
 				<Link to="/login">
-					<button className='homepage__buttons-login'>Login</button>
+					<button className='homepage__buttons-login'>LOGIN</button>
 				</Link>
 
 				<Link to="/register">
-					<button className='homepage__buttons-signup'>Sign Up</button>
+					<button className='homepage__buttons-signup'>SIGN UP</button>
 				</Link>
 			</div>
 
