@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 import './LoginPage.scss';
 import LoginImage from '../../assets/login2.svg';
 import { Link } from 'react-router-dom';
+const port = process.env.REACT_APP_API_URL;
 
 const LoginPage = () => {
-	const port = process.env.REACT_APP_API_URL;
-	console.log(port)
 
 	const navigate = useNavigate();
 

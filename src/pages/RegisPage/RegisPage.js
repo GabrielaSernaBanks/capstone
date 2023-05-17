@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-
-
+const port = process.env.REACT_APP_API_URL;
 
 function RegisPage() {
-	const port = process.env.REACT_APP_API_URL;
 
 	let navigate = useNavigate();
 

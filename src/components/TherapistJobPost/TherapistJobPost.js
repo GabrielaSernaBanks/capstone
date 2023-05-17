@@ -3,10 +3,10 @@ import './TherapistJobPost.scss';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+const port = process.env.REACT_APP_API_URL;
 
 
 function TherapistJobPost({ therapistID }) {
-	const port = process.env.REACT_APP_API_URL;
 	const [jobs, setJobs] = useState([]);
 	const [therapist__id] = useState(therapistID)
 
