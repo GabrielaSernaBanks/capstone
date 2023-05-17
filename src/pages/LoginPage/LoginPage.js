@@ -5,9 +5,9 @@ import './LoginPage.scss';
 import LoginImage from '../../assets/login2.svg';
 import { Link } from 'react-router-dom';
 
-const port = process.env.REACT_APP_PORT;
-
 const LoginPage = () => {
+	const port = process.env.REACT_APP_PORT;
+	console.log(port)
 
 	const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const LoginPage = () => {
 
 		};
 		if (email && password){
-		axios.post(`${port}/therapists/login`, userData)
+		axios.post (`${port}/therapists/login`, userData)
 			.then((response) => {
 				console.log(response.status, response.data)
 				sessionStorage.token = response.data.token

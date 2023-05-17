@@ -5,10 +5,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-const port = process.env.REACT_APP_PORT;
 
 
 function RegisPage() {
+	const port = process.env.REACT_APP_PORT;
 
 	let navigate = useNavigate();
 
