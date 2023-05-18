@@ -1,3 +1,50 @@
+
+# The Hive
+--
+
+Welcome to The Hive! This is a project built by Gabriela Serna. 
+
+# The technologies used to build this project include: 
+
+Front End
+-
+React, SASS, React Hooks, Props
+
+Back End
+--
+Node.js,
+Express.js,
+MySQL, Knex, JWT
+
+# Instructions:
+--
+The user can sign-in and login using their credentials. Upon sign-in, user will be prompted to login page. After user logs in, they will be directed to their "Therapist Home Page", which includes view of all the jobs available to the user. 
+
+User can select a job via "view details" button and either "accept job" or "go back." 
+
+Using the files icon, the user can go to their "My Jobs" page, which includes a list of the jobs they have "accepted."
+
+The user can "view details" of the jobs in "My Jobs" list and either "remove" or mark as "complete" and redirect to the "my Jobs" page. (These functionalities will be part of phase 2)
+
+User can "Logout" at anytime using the nav bar button.
+
+# For maximum user flow, please login with these credentials:
+    email: emily@gmail.com
+    password: emily
+--
+# To run app, please use: 
+npm start
+
+
+# Lessons Learned
+--
+Deploying is challenging! This is something I would like to practice using previous projects.  Creating a back-end using MySQL was interesting and challenging in that I had to focus on using the routes to assure data would be displayed on front-end. I also learned that back-end was not as bad as I thought it would be! 
+
+Next steps: For this web app, I would like to complete its functionality. There is a "school" user for my web app that I would love to finish to complete the whole web app. Additionally, there are libraries that I would like to implement on future phases of this web app. 
+
+
+/////
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
